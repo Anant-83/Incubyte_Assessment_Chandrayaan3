@@ -49,11 +49,13 @@ class Chandrayan{
     }
 
     turnUp(){
-        this.prevDirection = (this.prevDirection != 'U' && this.prevDirection != 'D') ? this.direction : this.prevDirection;
+        this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'U';
     }
 
     turnDown(){
+        this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
+        this.direction = 'D';
     }
 }
 
