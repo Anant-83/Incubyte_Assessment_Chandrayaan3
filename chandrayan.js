@@ -3,23 +3,27 @@ class Chandrayan{
     {
         this.direction = initialDirection;
         this.coordinates = {...initialCoordinates};
+        this.prevDirection = initialDirection;
     }
 
     turnLeft(){
         switch (this.direction){
             case 'N':
                 this.direction = 'W';
+                this.prevDirection = 'W';
                 break;
             case 'W':
                 this.direction = 'S';
+                this.prevDirection = 'S';
                 break;
             case 'S':
                 this.direction = 'E';
+                this.prevDirection = 'E';
                 break;
             case 'E':
                 this.direction = 'N';
+                this.prevDirection = 'N';
                 break;
-            
         }
     }
 
@@ -27,17 +31,25 @@ class Chandrayan{
         switch (this.direction){
             case 'N':
                 this.direction = 'E';
+                this.prevDirection = 'E';
                 break;
             case 'E':
                 this.direction = 'S';
+                this.prevDirection = 'S';
                 break;
             case 'S':
                 this.direction = 'W';
+                this.prevDirection = 'W';
                 break;
             case 'W':
                 this.direction = 'N';
+                this.prevDirection = 'N';
                 break;
         }
+    }
+
+    turnUp(){
+        
     }
 }
 
