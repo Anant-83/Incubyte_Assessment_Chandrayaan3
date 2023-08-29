@@ -10,6 +10,15 @@ class Chandrayan{
             case 'N':
                 this.direction = 'W';
                 break;
+            case 'W':
+                this.direction = 'S';
+                break;
+            case 'S':
+                this.direction = 'E';
+                break;
+            case 'E':
+                this.direction = 'N';
+                break;
             
         }
     }
