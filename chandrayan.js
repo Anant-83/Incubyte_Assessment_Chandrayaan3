@@ -22,6 +22,10 @@ class Chandrayan{
             
         }
     }
+
+    turnRight(){
+        
+    }
 }
 
 module.exports = Chandrayan;
