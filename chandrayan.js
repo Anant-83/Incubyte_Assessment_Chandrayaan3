@@ -4,6 +4,9 @@ class Chandrayan{
         this.direction = initialDirection;
         this.coordinates = {...initialCoordinates};
     }
+
+    turnLeft(){
+    }
 }
 
 module.exports = Chandrayan;
