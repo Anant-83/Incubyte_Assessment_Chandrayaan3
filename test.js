@@ -117,3 +117,21 @@ describe("Test for functionality - Turn the spacecraft up/down", () => {
         expect(spacecraft.direction).toBe('D');
     })
 })
+
+
+describe("Test for functionality - Move the spacecraft forward/backward", () => {
+    test("Move spacecraft forward from current direction - North", ()=>{
+        const currentDirection = 'N';
+        const currentCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
+        spacecraft.moveForward();
+        expect(spacecraft.coordinates).toBe({x:0,y:1,z:0});
+    })
+    test("Move spacecraft forward from current direction - South", ()=>{
+        const currentDirection = 'S';
+        const currentCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
+        spacecraft.moveForward();
+        expect(spacecraft.coordinates).toBe({x:0,y:-1,z:0});
+    })
+})

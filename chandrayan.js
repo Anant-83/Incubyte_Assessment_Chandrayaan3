@@ -81,6 +81,10 @@ class Chandrayan{
         this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'D';
     }
+
+    moveForward(){
+        
+    }
 }
 
 module.exports = Chandrayan;
