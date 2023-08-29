@@ -108,16 +108,22 @@ class Chandrayan{
     moveBackward(){
         switch (this.direction){
             case 'N':
+                this.coordinates.y--;
                 break;
             case 'S':
+                this.coordinates.y++;
                 break;
             case 'E':
+                this.coordinates.x--;
                 break;
             case 'W':
+                this.coordinates.x++;
                 break;
             case 'U':
+                this.coordinates.z--;
                 break;
             case 'D':
+                this.coordinates.z++;
                 break;
         }
     }
