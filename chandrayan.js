@@ -104,6 +104,23 @@ class Chandrayan{
                 break;
         }
     }
+
+    moveBackward(){
+        switch (this.direction){
+            case 'N':
+                break;
+            case 'S':
+                break;
+            case 'E':
+                break;
+            case 'W':
+                break;
+            case 'U':
+                break;
+            case 'D':
+                break;
+        }
+    }
 }
 
 module.exports = Chandrayan;
