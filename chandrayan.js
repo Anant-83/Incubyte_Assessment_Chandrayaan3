@@ -93,8 +93,12 @@ class Chandrayan{
             case 'E':
                 this.coordinates.x++;
                 break;
-                case 'W':
-                    this.coordinates.x--;
+            case 'W':
+                this.coordinates.x--;
+                break;
+            case 'U':
+                break;
+            case 'D':
                 break;
         }
     }
