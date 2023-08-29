@@ -90,6 +90,10 @@ class Chandrayan{
             case 'S':
                 this.coordinates.y--;
                 break;
+            case 'E':
+                break;
+            case 'W':
+                break;
         }
     }
 }
