@@ -30,6 +30,8 @@ class Chandrayan{
                 this.direction = temp.direction;
                 this.prevDirection = this.direction;
                 break;
+            case 'D':
+                break;
         }
     }
 
