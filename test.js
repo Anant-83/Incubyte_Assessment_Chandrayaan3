@@ -125,13 +125,13 @@ describe("Test for functionality - Move the spacecraft forward/backward", () => 
         const currentCoordinates = { x: 0, y: 0, z: 0 };
         const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
         spacecraft.moveForward();
-        expect(spacecraft.coordinates).toBe({x:0,y:1,z:0});
+        expect(spacecraft.coordinates).toEqual({x:0,y:1,z:0});
     })
     test("Move spacecraft forward from current direction - South", ()=>{
         const currentDirection = 'S';
         const currentCoordinates = { x: 0, y: 0, z: 0 };
         const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
         spacecraft.moveForward();
-        expect(spacecraft.coordinates).toBe({x:0,y:-1,z:0});
+        expect(spacecraft.coordinates).toEqual({x:0,y:-1,z:0});
     })
 })

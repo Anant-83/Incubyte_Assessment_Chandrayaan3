@@ -83,7 +83,14 @@ class Chandrayan{
     }
 
     moveForward(){
-        
+        switch (this.direction){
+            case 'N':
+                this.coordinates.y++;
+                break;
+            case 'S':
+                this.coordinates.y--;
+                break;
+        }
     }
 }
 
