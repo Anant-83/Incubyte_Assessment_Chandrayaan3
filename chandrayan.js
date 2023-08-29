@@ -58,8 +58,16 @@ class Chandrayan{
                 this.prevDirection = 'N';
                 break;
             case 'U':
+                const tempForUp = new Chandrayan(this.prevDirection,this.coordinates);
+                tempForUp.turnRight();
+                this.direction = tempForUp.direction;
+                this.prevDirection = this.direction;
                 break;
             case 'D':
+                const tempForDown = new Chandrayan(this.prevDirection,this.coordinates);
+                tempForDown.turnRight();
+                this.direction = tempForDown.direction;
+                this.prevDirection = this.direction;
                 break;
         }
     }
