@@ -24,6 +24,8 @@ class Chandrayan{
                 this.direction = 'N';
                 this.prevDirection = 'N';
                 break;
+            case 'U':
+                break;
         }
     }
 

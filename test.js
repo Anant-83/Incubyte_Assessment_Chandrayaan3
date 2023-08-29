@@ -59,6 +59,16 @@ describe("Test for the functionality - Turn the spacecraft left/right", () => {
         spacecraft.turnRight();
         expect(spacecraft.direction).toBe('S');
     })
+
+
+    test("Turn left from current angle upward", () => {
+        const currentDirection = 'N';
+        const currentCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
+        spacecraft.turnUp();
+        spacecraft.turnLeft();
+        expect(spacecraft.direction).toBe('W');
+    })
 })
 
 
