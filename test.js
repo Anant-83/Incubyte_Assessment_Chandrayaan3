@@ -70,4 +70,13 @@ describe("Test for functionality - Turn the spacecraft up/down", () => {
         spacecraft.turnUp();
         expect(spacecraft.direction).toBe('U');
     })
+
+
+    test("Turn downwards from any of current direction", ()=>{
+        const currentDirection = 'N';
+        const currentCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
+        spacecraft.turnDown();
+        expect(spacecraft.direction).toBe('D');
+    })
 })
