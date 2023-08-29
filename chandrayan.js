@@ -25,12 +25,16 @@ class Chandrayan{
                 this.prevDirection = 'N';
                 break;
             case 'U':
-                const temp = new Chandrayan(this.prevDirection,this.coordinates);
-                temp.turnLeft();
-                this.direction = temp.direction;
+                const tempForUp = new Chandrayan(this.prevDirection,this.coordinates);
+                tempForUp.turnLeft();
+                this.direction = tempForUp.direction;
                 this.prevDirection = this.direction;
                 break;
             case 'D':
+                const tempForDown = new Chandrayan(this.prevDirection,this.coordinates);
+                tempForDown.turnLeft();
+                this.direction = tempForDown.direction;
+                this.prevDirection = this.direction;
                 break;
         }
     }
@@ -52,6 +56,10 @@ class Chandrayan{
             case 'W':
                 this.direction = 'N';
                 this.prevDirection = 'N';
+                break;
+            case 'U':
+                break;
+            case 'D':
                 break;
         }
     }
