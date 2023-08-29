@@ -24,7 +24,11 @@ class Chandrayan{
     }
 
     turnRight(){
-        
+        switch (this.direction){
+            case 'N':
+                this.direction = 'E';
+                break;
+        }
     }
 }
 
