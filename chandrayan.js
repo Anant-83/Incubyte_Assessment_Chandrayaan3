@@ -1,13 +1,12 @@
-class Chandrayan{
-    constructor(initialDirection, initialCoordinates)
-    {
+class Chandrayan {
+    constructor(initialDirection, initialCoordinates) {
         this.direction = initialDirection;
-        this.coordinates = {...initialCoordinates};
+        this.coordinates = { ...initialCoordinates };
         this.prevDirection = initialDirection;
     }
 
-    turnLeft(){
-        switch (this.direction){
+    turnLeft() {
+        switch (this.direction) {
             case 'N':
                 this.direction = 'W';
                 this.prevDirection = 'W';
@@ -25,13 +24,13 @@ class Chandrayan{
                 this.prevDirection = 'N';
                 break;
             case 'U':
-                const tempForUp = new Chandrayan(this.prevDirection,this.coordinates);
+                const tempForUp = new Chandrayan(this.prevDirection, this.coordinates);
                 tempForUp.turnLeft();
                 this.direction = tempForUp.direction;
                 this.prevDirection = this.direction;
                 break;
             case 'D':
-                const tempForDown = new Chandrayan(this.prevDirection,this.coordinates);
+                const tempForDown = new Chandrayan(this.prevDirection, this.coordinates);
                 tempForDown.turnLeft();
                 this.direction = tempForDown.direction;
                 this.prevDirection = this.direction;
@@ -39,8 +38,8 @@ class Chandrayan{
         }
     }
 
-    turnRight(){
-        switch (this.direction){
+    turnRight() {
+        switch (this.direction) {
             case 'N':
                 this.direction = 'E';
                 this.prevDirection = 'E';
@@ -58,13 +57,13 @@ class Chandrayan{
                 this.prevDirection = 'N';
                 break;
             case 'U':
-                const tempForUp = new Chandrayan(this.prevDirection,this.coordinates);
+                const tempForUp = new Chandrayan(this.prevDirection, this.coordinates);
                 tempForUp.turnRight();
                 this.direction = tempForUp.direction;
                 this.prevDirection = this.direction;
                 break;
             case 'D':
-                const tempForDown = new Chandrayan(this.prevDirection,this.coordinates);
+                const tempForDown = new Chandrayan(this.prevDirection, this.coordinates);
                 tempForDown.turnRight();
                 this.direction = tempForDown.direction;
                 this.prevDirection = this.direction;
@@ -72,18 +71,18 @@ class Chandrayan{
         }
     }
 
-    turnUp(){
+    turnUp() {
         this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'U';
     }
 
-    turnDown(){
+    turnDown() {
         this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'D';
     }
 
-    moveForward(){
-        switch (this.direction){
+    moveForward() {
+        switch (this.direction) {
             case 'N':
                 this.coordinates.y++;
                 break;
@@ -105,8 +104,8 @@ class Chandrayan{
         }
     }
 
-    moveBackward(){
-        switch (this.direction){
+    moveBackward() {
+        switch (this.direction) {
             case 'N':
                 this.coordinates.y--;
                 break;
@@ -126,6 +125,12 @@ class Chandrayan{
                 this.coordinates.z++;
                 break;
         }
+    }
+
+    execute(commands) {
+        commands.forEach(command => {
+            
+        });
     }
 }
 

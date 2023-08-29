@@ -1,4 +1,5 @@
 const Chandrayan = require('./chandrayan');
+
 describe("Test for the functionality - Turn the spacecraft left/right", () => {
     test("Turn left from current direction - 'North' ", ()=>{
         const currentDirection = 'N';
@@ -210,5 +211,16 @@ describe("Test for functionality - Move the spacecraft forward/backward", () => 
         const spacecraft = new Chandrayan(currentDirection, currentCoordinates);
         spacecraft.moveBackward();
         expect(spacecraft.coordinates).toEqual({x:0,y:0,z:1});
+    })
+})
+
+describe("Test for perform multiple functionality together", () => {
+    test("Perform sequence of operations test1", () => {
+        const commands = ['f', 'r', 'u', 'b', 'l'];
+        const initialDirection = 'N';
+        const initialCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+        expect(spacecraft.coordinates).toEqual({x:0,y:1,z:-1})
     })
 })
