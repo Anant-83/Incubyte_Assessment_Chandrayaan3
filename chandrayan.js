@@ -129,7 +129,26 @@ class Chandrayan {
 
     execute(commands) {
         commands.forEach(command => {
-            
+            switch (command) {
+                case 'f':
+                    this.moveForward();
+                    break;
+                case 'b':
+                    this.moveBackward();
+                    break;
+                case 'l':
+                    this.turnLeft();
+                    break;
+                case 'r':
+                    this.turnRight();
+                    break;
+                case 'u':
+                    this.turnUp();
+                    break;
+                case 'd':
+                    this.turnDown();
+                    break;
+            }
         });
     }
 }
