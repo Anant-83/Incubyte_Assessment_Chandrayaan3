@@ -221,6 +221,8 @@ describe("Test for perform multiple functionality together", () => {
         const initialCoordinates = { x: 0, y: 0, z: 0 };
         const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
         spacecraft.execute(commands);
-        expect(spacecraft.coordinates).toEqual({x:0,y:1,z:-1})
+
+        const expected_spacecraft = new Chandrayan('N', {x:0,y:1,z:-1});
+        expect(spacecraft).toEqual(expected_spacecraft);
     })
 })
