@@ -259,3 +259,28 @@ describe("Test for perform multiple functionality together", () => {
         expect(spacecraft).toEqual(expected_spacecraft);
     })
 })
+
+describe("Test for invalid arguments", () => {
+
+    test("Perform operations for invalid direction", () => {
+        const commands = ['Z', 'l', 'b', 'b'];
+        const initialDirection = 'N';
+        const initialCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+
+        const expected_spacecraft = new Chandrayan('N', {x:0,y:0,z:0});
+        expect(spacecraft).toEqual(expected_spacecraft);
+    })
+
+    test("Perform operations for invalid command", () => {
+        const commands = ['b', 'a', 'z', 'r'];
+        const initialDirection = 'N';
+        const initialCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+
+        const expected_spacecraft = new Chandrayan('N', {x:0,y:0,z:0});
+        expect(spacecraft).toEqual(expected_spacecraft);
+    })
+})
