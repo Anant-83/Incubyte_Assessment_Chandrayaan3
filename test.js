@@ -268,7 +268,7 @@ describe("Test for invalid arguments", () => {
         const initialCoordinates = { x: 0, y: 0, z: 0 };
         const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
         spacecraft.execute(commands);
-
+ 
         const expected_spacecraft = new Chandrayan('N', {x:0,y:0,z:0});
         expect(spacecraft).toEqual(expected_spacecraft);
     })
