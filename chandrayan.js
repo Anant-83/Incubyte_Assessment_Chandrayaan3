@@ -128,7 +128,9 @@ class Chandrayan {
     }
 
     execute(commands) {
-        commands.forEach(command => {
+        const validArguments = ['N', 'S', 'E', 'W', 'f', 'b', 'l', 'r', 'u', 'd'];
+        const invalidCommands = commands.filter(command => !validArguments.includes(command));
+        invalidCommands.length === 0 && commands.forEach(command => {
             switch (command) {
                 case 'f':
                     this.moveForward();
