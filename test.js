@@ -225,4 +225,37 @@ describe("Test for perform multiple functionality together", () => {
         const expected_spacecraft = new Chandrayan('N', {x:0,y:1,z:-1});
         expect(spacecraft).toEqual(expected_spacecraft);
     })
+
+    test("Perform sequence of operations test2", () => {
+        const commands = ['b', 'b', 'u', 'f', 'r'];
+        const initialDirection = 'W';
+        const initialCoordinates = { x: -2, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+
+        const expected_spacecraft = new Chandrayan('N', {x:0,y:0,z:1});
+        expect(spacecraft).toEqual(expected_spacecraft);
+    })
+
+    test("Perform sequence of operations test3", () => {
+        const commands = ['d', 'r', 'f', 'b', 'l', 'l', 'f'];
+        const initialDirection = 'N';
+        const initialCoordinates = { x: 0, y: 1, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+
+        const expected_spacecraft = new Chandrayan('W', {x:-1,y:1,z:0});
+        expect(spacecraft).toEqual(expected_spacecraft);
+    })
+
+    test("Perform sequence of operations test4", () => {
+        const commands = ['u', 'l', 'd', 'r'];
+        const initialDirection = 'S';
+        const initialCoordinates = { x: 0, y: 0, z: 0 };
+        const spacecraft = new Chandrayan(initialDirection, initialCoordinates);
+        spacecraft.execute(commands);
+
+        const expected_spacecraft = new Chandrayan('S', {x:0,y:0,z:0});
+        expect(spacecraft).toEqual(expected_spacecraft);
+    })
 })
