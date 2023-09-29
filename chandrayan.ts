@@ -1,11 +1,16 @@
 class Chandrayan {
-    constructor(initialDirection, initialCoordinates) {
+    direction: string;
+    coordinates: { x: number, y: number, z: number };
+    prevDirection: string;
+    static boundary: number = 10;
+
+    constructor(initialDirection: string, initialCoordinates: { x: number, y: number, z: number }) {
         this.direction = initialDirection;
         this.coordinates = { ...initialCoordinates };
         this.prevDirection = initialDirection;
     }
 
-    turnLeft() {
+    turnLeft(): void {
         switch (this.direction) {
             case 'N':
                 this.direction = 'W';
@@ -38,7 +43,7 @@ class Chandrayan {
         }
     }
 
-    turnRight() {
+    turnRight(): void {
         switch (this.direction) {
             case 'N':
                 this.direction = 'E';
@@ -71,17 +76,17 @@ class Chandrayan {
         }
     }
 
-    turnUp() {
+    turnUp(): void {
         this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'U';
     }
 
-    turnDown() {
+    turnDown(): void {
         this.prevDirection = (this.direction != 'U' && this.direction != 'D') ? this.direction : this.prevDirection;
         this.direction = 'D';
     }
 
-    moveForward() {
+    moveForward(): void {
         switch (this.direction) {
             case 'N':
                 this.coordinates.y++;
@@ -104,7 +109,7 @@ class Chandrayan {
         }
     }
 
-    moveBackward() {
+    moveBackward(): void {
         switch (this.direction) {
             case 'N':
                 this.coordinates.y--;
@@ -127,8 +132,10 @@ class Chandrayan {
         }
     }
 
-    execute(commands) {
-        commands.forEach(command => {
+    execute(commands: string[]): void {
+        const validArguments: string[] = ['N', 'S', 'E', 'W', 'f', 'b', 'l', 'r', 'u', 'd'];
+        const invalidCommands: string[] = commands.filter(command => !validArguments.includes(command));
+        invalidCommands.length === 0 && commands.forEach(command => {
             switch (command) {
                 case 'f':
                     this.moveForward();
@@ -149,8 +156,14 @@ class Chandrayan {
                     this.turnDown();
                     break;
             }
+            const current_x: number = this.coordinates.x;
+            const current_y: number = this.coordinates.y;
+            const current_z: number = this.coordinates.z;
+            if (Math.abs(current_x) > Chandrayan.boundary || Math.abs(current_y) > Chandrayan.boundary || Math.abs(current_z) > Chandrayan.boundary) {
+                throw new Error("Boundary crossed!");
+            }
         });
     }
 }
 
-module.exports = Chandrayan;
+export default Chandrayan;
