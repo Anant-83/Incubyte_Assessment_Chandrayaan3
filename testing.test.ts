@@ -254,8 +254,22 @@ describe("Test for perform multiple functionality together", () => {
         const initialCoordinates: { x: number, y: number, z: number } = { x: 0, y: 0, z: 0 };
         const spacecraft: Chandrayan = new Chandrayan(initialDirection, initialCoordinates);
         spacecraft.execute(commands);
-
+        
         const expected_spacecraft: Chandrayan = new Chandrayan('S', {x:0,y:0,z:0});
         expect(spacecraft).toEqual(expected_spacecraft);
+    })
+})
+
+
+describe("Test for boundary cases", () => {
+    test("Boundary crossed at north direction", () => {
+        const initialDirection: string = 'N';
+        const initialCoordinates: { x: number, y: number, z: number } = { x: 0, y: 8, z: 0 };
+        const spacecraft: Chandrayan = new Chandrayan(initialDirection, initialCoordinates);
+        const commands: string[] = ['f', 'f', 'f'];
+        const executes = () => {
+            spacecraft.execute(commands);
+        }
+        expect(executes).toThrow("Boundary crossed!");
     })
 })

@@ -156,12 +156,7 @@ class Chandrayan {
                     this.turnDown();
                     break;
             }
-            const current_x: number = this.coordinates.x;
-            const current_y: number = this.coordinates.y;
-            const current_z: number = this.coordinates.z;
-            if (Math.abs(current_x) > Chandrayan.boundary || Math.abs(current_y) > Chandrayan.boundary || Math.abs(current_z) > Chandrayan.boundary) {
-                throw new Error("Boundary crossed!");
-            }
+            
         });
     }
 }
