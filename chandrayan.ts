@@ -132,15 +132,9 @@ class Chandrayan {
         }
     }
 
-<<<<<<< HEAD:chandrayan.ts
     execute(commands: string[]): void {
         const validArguments: string[] = ['N', 'S', 'E', 'W', 'f', 'b', 'l', 'r', 'u', 'd'];
         const invalidCommands: string[] = commands.filter(command => !validArguments.includes(command));
-=======
-    execute(commands) {
-        const validArguments = ['N', 'S', 'E', 'W', 'f', 'b', 'l', 'r', 'u', 'd'];
-        const invalidCommands = commands.filter(command => !validArguments.includes(command));
->>>>>>> ca88d025b4d3f2a23e658154f8965cf1d529eaea:chandrayan.js
         invalidCommands.length === 0 && commands.forEach(command => {
             switch (command) {
                 case 'f':
@@ -172,8 +166,4 @@ class Chandrayan {
     }
 }
 
-<<<<<<< HEAD:chandrayan.ts
 export default Chandrayan;
-=======
-module.exports = Chandrayan;
->>>>>>> ca88d025b4d3f2a23e658154f8965cf1d529eaea:chandrayan.js
